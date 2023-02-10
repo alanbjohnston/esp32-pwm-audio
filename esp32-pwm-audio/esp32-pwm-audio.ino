@@ -17,7 +17,7 @@
 #include "esp_log.h"
 #include "esp_err.h"
 
-#include "../components/pwm_audio/include/pwm_audio.h"
+#include "pwm_audio/include/pwm_audio.h"
 #include "wave.h"
 
 static const char *TAG = "pwm_audio";
