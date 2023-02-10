@@ -148,7 +148,7 @@ static void pwm_audio_task(void *arg)
 
 
 //void app_main(void)
-setup()
+void setup()
 {
     ESP_LOGI(TAG, "----------start------------");
     ESP_LOGI(TAG, "esp-idf version: %s", IDF_VER);
@@ -167,7 +167,7 @@ setup()
 
     /* Main loop */
  //   while (true) {
-loop() {
+void loop() {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
 
         vTaskGetRunTimeStats(task_info);
