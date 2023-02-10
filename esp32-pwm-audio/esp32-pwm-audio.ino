@@ -147,7 +147,8 @@ static void pwm_audio_task(void *arg)
 }
 
 
-void app_main(void)
+//void app_main(void)
+setup()
 {
     ESP_LOGI(TAG, "----------start------------");
     ESP_LOGI(TAG, "esp-idf version: %s", IDF_VER);
@@ -162,13 +163,15 @@ void app_main(void)
         ESP_LOGE(TAG, "malloc error");
         vTaskDelay(portMAX_DELAY);
     }
+}
 
     /* Main loop */
-    while (true) {
+ //   while (true) {
+loop() {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
 
         vTaskGetRunTimeStats(task_info);
         printf("\r\n------------\n%s", task_info);
         printf("the memory get: %d\n", esp_get_free_heap_size());
-    }
+//    }
 }
