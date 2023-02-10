@@ -147,6 +147,7 @@ static void pwm_audio_task(void *arg)
     }
 }
 
+static char *task_info = NULL;
 
 //void app_main(void)
 void setup()
@@ -157,7 +158,7 @@ void setup()
     // xTaskCreate(sin_test_task, "sin_test_task", 1024 * 3, NULL, 5, NULL);
     xTaskCreate(pwm_audio_task, "pwm_audio_task", 1024 * 3, NULL, 5, NULL);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
-    static char *task_info = NULL;
+
     task_info = (char *)malloc(1024);
 
     if (task_info == NULL) {
