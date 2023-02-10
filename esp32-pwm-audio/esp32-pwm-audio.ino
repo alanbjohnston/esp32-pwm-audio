@@ -19,7 +19,7 @@
 
 #include "pwm_audio/include/pwm_audio.h"
 #include "wave.h"
-#include "esp32_pwm_audio.h"
+#include "esp32-pwm-audio.h"
 
 static const char *TAG = "pwm_audio";
 
