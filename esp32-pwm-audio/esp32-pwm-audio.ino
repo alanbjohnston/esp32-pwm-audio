@@ -44,7 +44,7 @@ static void sin_test_task(void *arg)
     size_t cnt;
     uint32_t block_w = 256;
 
-    buf = malloc(size);
+    buf = (int8_t *)malloc(size);
 
     if (buf == NULL) {
         ESP_LOGE(TAG, "malloc error");
@@ -67,7 +67,7 @@ static void sin_test_task(void *arg)
     pac.timer_num          = TIMER_0;
     pac.ringbuf_len        = 1024 * 8;
     pwm_audio_init(&pac);
-    pwm_audio_set_param(48000, 8, 1);
+    pwm_audio_set_param(48000, 8, (ledc_timer_bit_t)1);
     pwm_audio_start();
 
     while (1) {
