@@ -67,7 +67,8 @@ static void sin_test_task(void *arg)
     pac.timer_num          = TIMER_0;
     pac.ringbuf_len        = 1024 * 8;
     pwm_audio_init(&pac);
-    pwm_audio_set_param(48000, 8, (ledc_timer_bit_t)1);
+    ledc_timer_bit_t x = 1;
+    pwm_audio_set_param(48000, 8, x);
     pwm_audio_start();
 
     while (1) {
@@ -114,7 +115,8 @@ static void pwm_audio_task(void *arg)
     size_t cnt;
     uint32_t block_w = 2048;
     ESP_LOGI(TAG, "play init");
-    pwm_audio_set_param(wave_framerate, wave_bits, wave_ch);
+    ledc_timer_bit_t wave_chx = wave_ch;
+    pwm_audio_set_param(wave_framerate, wave_bits, wave_chx);
     pwm_audio_start();
     pwm_audio_set_volume(0);
 
